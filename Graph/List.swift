@@ -10,13 +10,13 @@ protocol List {
   associatedtype Element
   static var empty: Self { get }
   static func connected(_ newElement: Element, _ list: Self) -> Self
-  func list<T>(empty: () -> T, connected: (Element, Self) -> T) -> T
+  func matching<T>(empty: () -> T, connected: (Element, Self) -> T) -> T
 }
 
 extension List {
   
   var decomposed: (first: Element, remaining: Self)? {
-    return list(
+    return matching(
       empty: {
         nil
     },
@@ -64,7 +64,7 @@ extension LinkedList: List {
     return LinkedList(head: Node.connected(newElement, list.head))
   }
 
-  func list<T>(empty: () -> T, connected: (Element, LinkedList) -> T) -> T {
+  func matching<T>(empty: () -> T, connected: (Element, LinkedList) -> T) -> T {
     switch head {
     case .empty:
       return empty()
