@@ -11,7 +11,7 @@ public protocol Graph {
   func outgoingConnections(from vertex: Edge.Vertex) -> [Edge]?
 }
 
-extension Graph where Edge.Vertex: Hashable {
+public extension Graph where Edge.Vertex: Hashable {
   
   func depthFirstPath(from start: Edge.Vertex, to finish: Edge.Vertex) -> [Edge.Vertex]? {
     
