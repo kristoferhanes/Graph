@@ -10,6 +10,8 @@
 		5ECFF9431FD78EB90064FC53 /* Graph.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5ECFF9391FD78EB90064FC53 /* Graph.framework */; };
 		5ECFF9481FD78EB90064FC53 /* GraphTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECFF9471FD78EB90064FC53 /* GraphTests.swift */; };
 		5ECFF9541FD78F550064FC53 /* Graph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECFF9531FD78F550064FC53 /* Graph.swift */; };
+		5ECFF9581FD795D40064FC53 /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECFF9571FD795D40064FC53 /* List.swift */; };
+		5ECFF95C1FD7A5B10064FC53 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECFF95B1FD7A5B10064FC53 /* Queue.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +31,8 @@
 		5ECFF9471FD78EB90064FC53 /* GraphTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphTests.swift; sourceTree = "<group>"; };
 		5ECFF9491FD78EB90064FC53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5ECFF9531FD78F550064FC53 /* Graph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Graph.swift; sourceTree = "<group>"; };
+		5ECFF9571FD795D40064FC53 /* List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = List.swift; sourceTree = "<group>"; };
+		5ECFF95B1FD7A5B10064FC53 /* Queue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +76,8 @@
 			isa = PBXGroup;
 			children = (
 				5ECFF9531FD78F550064FC53 /* Graph.swift */,
+				5ECFF95B1FD7A5B10064FC53 /* Queue.swift */,
+				5ECFF9571FD795D40064FC53 /* List.swift */,
 				5ECFF93D1FD78EB90064FC53 /* Info.plist */,
 			);
 			path = Graph;
@@ -196,7 +202,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5ECFF95C1FD7A5B10064FC53 /* Queue.swift in Sources */,
 				5ECFF9541FD78F550064FC53 /* Graph.swift in Sources */,
+				5ECFF9581FD795D40064FC53 /* List.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
