@@ -9,11 +9,15 @@
 protocol List {
   associatedtype Element
   static var empty: Self { get }
-  static func connected(_ newElement: Element, _ list: Self) -> Self
+  static func prepending(_ newElement: Element, to list: Self) -> Self
   func matching<T>(empty: () -> T, connected: (Element, Self) -> T) -> T
 }
 
 extension List {
+  
+  init(_ element: Element) {
+    self = Self.prepending(element, to: Self.empty)
+  }
   
   var decomposed: (first: Element, remaining: Self)? {
     return matching(
@@ -60,7 +64,7 @@ extension LinkedList: List {
     return LinkedList(head: Node.empty)
   }
 
-  static func connected(_ newElement: Element, _ list: LinkedList) -> LinkedList {
+  static func prepending(_ newElement: Element, to list: LinkedList) -> LinkedList {
     return LinkedList(head: Node.connected(newElement, list.head))
   }
 
