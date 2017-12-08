@@ -46,7 +46,7 @@ extension Heap: PriorityQueue {
 private extension Heap {
   
   mutating func siftUp(from currentIndex: Int) {
-    guard let parentIndex = Heap.parentIndex(for: currentIndex) else { return }
+    guard let parentIndex = parentIndex(for: currentIndex) else { return }
     guard heap[currentIndex].priority > heap[parentIndex].priority else { return }
     heap.swapAt(currentIndex, parentIndex)
     siftUp(from: parentIndex)
@@ -78,8 +78,8 @@ private extension Heap {
     }
   }
   
-  static func parentIndex(for childIndex: Int) -> Int? {
-    guard childIndex > 0 else { return nil }
+  func parentIndex(for childIndex: Int) -> Int? {
+    guard childIndex > heap.startIndex else { return nil }
     return (childIndex - 1) / 2
   }
   
