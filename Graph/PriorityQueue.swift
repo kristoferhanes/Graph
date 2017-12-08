@@ -28,8 +28,14 @@ extension Heap: PriorityQueue {
   
   mutating func dequeueNext() -> Element? {
     guard let result = heap.first?.element else { return nil }
-    heap.swapAt(heap.startIndex, heap.endIndex - 1)
-    siftDown(from: heap.startIndex)
+    if heap.count == 1 {
+      heap.removeAll()
+    }
+    else {
+      guard let last = heap.popLast() else { return nil }
+      heap[heap.startIndex] = last
+      siftDown(from: heap.startIndex)
+    }
     return result
   }
   
@@ -47,23 +53,22 @@ private extension Heap {
   
   mutating func siftUp(from currentIndex: Int) {
     guard let parentIndex = parentIndex(for: currentIndex) else { return }
-    guard heap[currentIndex].priority > heap[parentIndex].priority else { return }
+    guard heap[currentIndex].priority < heap[parentIndex].priority else { return }
     heap.swapAt(currentIndex, parentIndex)
     siftUp(from: parentIndex)
   }
   
   mutating func siftDown(from currentIndex: Int) {
-    switch (leftChildIndex(for: currentIndex), rightChildIndex(for: currentIndex)) {
-    case let (leftChildIndex?, rightChildIndex?):
+    guard let leftChildIndex = leftChildIndex(for: currentIndex) else { return }
+    if let rightChildIndex = rightChildIndex(for: currentIndex) {
       let smallerChildIndex = indexWithSmallerPriority(leftChildIndex, rightChildIndex)
       guard heap[currentIndex].priority > heap[smallerChildIndex].priority else { return }
       heap.swapAt(currentIndex, smallerChildIndex)
       siftDown(from: smallerChildIndex)
-    case let (leftChildIndex?, nil):
+    }
+    else {
       guard heap[currentIndex].priority > heap[leftChildIndex].priority else { return }
       heap.swapAt(currentIndex, leftChildIndex)
-    case (nil, _):
-      break
     }
   }
   
