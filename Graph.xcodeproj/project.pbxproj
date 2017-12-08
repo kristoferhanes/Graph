@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		5E4C2FEE1FDA4B60004CEE9C /* PriorityQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4C2FED1FDA4B60004CEE9C /* PriorityQueue.swift */; };
+		5E4C2FF01FDB1524004CEE9C /* DictionaryGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4C2FEF1FDB1524004CEE9C /* DictionaryGraph.swift */; };
+		5E4C2FF21FDB16B7004CEE9C /* WeightedEdge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4C2FF11FDB16B7004CEE9C /* WeightedEdge.swift */; };
+		5E4C2FFD1FDB27FE004CEE9C /* Prelude.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E4C2FFA1FDB27E6004CEE9C /* Prelude.framework */; };
 		5ECFF9431FD78EB90064FC53 /* Graph.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5ECFF9391FD78EB90064FC53 /* Graph.framework */; };
 		5ECFF9481FD78EB90064FC53 /* GraphTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECFF9471FD78EB90064FC53 /* GraphTests.swift */; };
 		5ECFF9541FD78F550064FC53 /* Graph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECFF9531FD78F550064FC53 /* Graph.swift */; };
@@ -16,6 +19,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		5E4C2FF91FDB27E6004CEE9C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5E4C2FF41FDB27E6004CEE9C /* Prelude.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5EE4E8021EEA305F003CB964;
+			remoteInfo = Prelude;
+		};
+		5E4C2FFB1FDB27E6004CEE9C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5E4C2FF41FDB27E6004CEE9C /* Prelude.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5EE4E80B1EEA3060003CB964;
+			remoteInfo = PreludeTests;
+		};
 		5ECFF9441FD78EB90064FC53 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5ECFF9301FD78EB90064FC53 /* Project object */;
@@ -27,6 +44,9 @@
 
 /* Begin PBXFileReference section */
 		5E4C2FED1FDA4B60004CEE9C /* PriorityQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriorityQueue.swift; sourceTree = "<group>"; };
+		5E4C2FEF1FDB1524004CEE9C /* DictionaryGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryGraph.swift; sourceTree = "<group>"; };
+		5E4C2FF11FDB16B7004CEE9C /* WeightedEdge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightedEdge.swift; sourceTree = "<group>"; };
+		5E4C2FF41FDB27E6004CEE9C /* Prelude.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Prelude.xcodeproj; path = ../../GitHub/Prelude/Prelude.xcodeproj; sourceTree = "<group>"; };
 		5ECFF9391FD78EB90064FC53 /* Graph.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Graph.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5ECFF93D1FD78EB90064FC53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5ECFF9421FD78EB90064FC53 /* GraphTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GraphTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -42,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E4C2FFD1FDB27FE004CEE9C /* Prelude.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,12 +77,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5E4C2FF31FDB27E5004CEE9C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5E4C2FF41FDB27E6004CEE9C /* Prelude.xcodeproj */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5E4C2FF51FDB27E6004CEE9C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5E4C2FFA1FDB27E6004CEE9C /* Prelude.framework */,
+				5E4C2FFC1FDB27E6004CEE9C /* PreludeTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		5ECFF92F1FD78EB90064FC53 = {
 			isa = PBXGroup;
 			children = (
 				5ECFF93B1FD78EB90064FC53 /* Graph */,
 				5ECFF9461FD78EB90064FC53 /* GraphTests */,
 				5ECFF93A1FD78EB90064FC53 /* Products */,
+				5E4C2FF31FDB27E5004CEE9C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -78,10 +117,12 @@
 			isa = PBXGroup;
 			children = (
 				5ECFF9531FD78F550064FC53 /* Graph.swift */,
+				5E4C2FEF1FDB1524004CEE9C /* DictionaryGraph.swift */,
+				5E4C2FF11FDB16B7004CEE9C /* WeightedEdge.swift */,
 				5ECFF95B1FD7A5B10064FC53 /* Queue.swift */,
+				5E4C2FED1FDA4B60004CEE9C /* PriorityQueue.swift */,
 				5ECFF9571FD795D40064FC53 /* List.swift */,
 				5ECFF93D1FD78EB90064FC53 /* Info.plist */,
-				5E4C2FED1FDA4B60004CEE9C /* PriorityQueue.swift */,
 			);
 			path = Graph;
 			sourceTree = "<group>";
@@ -175,6 +216,12 @@
 			mainGroup = 5ECFF92F1FD78EB90064FC53;
 			productRefGroup = 5ECFF93A1FD78EB90064FC53 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 5E4C2FF51FDB27E6004CEE9C /* Products */;
+					ProjectRef = 5E4C2FF41FDB27E6004CEE9C /* Prelude.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				5ECFF9381FD78EB90064FC53 /* Graph */,
@@ -182,6 +229,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		5E4C2FFA1FDB27E6004CEE9C /* Prelude.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Prelude.framework;
+			remoteRef = 5E4C2FF91FDB27E6004CEE9C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5E4C2FFC1FDB27E6004CEE9C /* PreludeTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = PreludeTests.xctest;
+			remoteRef = 5E4C2FFB1FDB27E6004CEE9C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		5ECFF9371FD78EB90064FC53 /* Resources */ = {
@@ -205,8 +269,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E4C2FF01FDB1524004CEE9C /* DictionaryGraph.swift in Sources */,
 				5ECFF95C1FD7A5B10064FC53 /* Queue.swift in Sources */,
 				5E4C2FEE1FDA4B60004CEE9C /* PriorityQueue.swift in Sources */,
+				5E4C2FF21FDB16B7004CEE9C /* WeightedEdge.swift in Sources */,
 				5ECFF9541FD78F550064FC53 /* Graph.swift in Sources */,
 				5ECFF9581FD795D40064FC53 /* List.swift in Sources */,
 			);
